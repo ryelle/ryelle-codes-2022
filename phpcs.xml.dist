@@ -1,0 +1,42 @@
+<?xml version="1.0" ?>
+<ruleset name="WordPress Coding Standards">
+
+	<!-- Show sniff codes in all reports -->
+	<arg value="ps" />
+	<arg name="colors" />
+
+	<!-- Exclude 3rd-party files -->
+	<exclude-pattern>*/vendor/*</exclude-pattern>
+	<exclude-pattern>*/node_modules/*</exclude-pattern>
+
+	<!-- Scan all (php) files in the current folder and subfolders -->
+	<file>.</file>
+	<arg name="extensions" value="php" />
+
+	<rule ref="WordPress-Core">
+		<exclude name="WordPress.Files.FileName.InvalidClassFileName" />
+		<exclude name="WordPress.WP.I18n.MissingTranslatorsComment" />
+		<exclude name="WordPress.WP.DeprecatedFunctions.get_settingsFound" />
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedConstantFound" />
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedVariableFound" />
+		<exclude name="WordPress.NamingConventions.PrefixAllGlobals.NonPrefixedHooknameFound" />
+		<exclude name="Generic.Arrays.DisallowShortArraySyntax.Found" />
+	</rule>
+
+	<rule ref="WordPress-Docs">
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamComment" />
+		<exclude name="Squiz.Commenting.FileComment.Missing" />
+		<exclude name="Squiz.Commenting.ClassComment.Missing" />
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag" />
+		<exclude name="Generic.Commenting.DocComment.MissingShort" />
+		<exclude name="Squiz.Commenting.VariableComment.Missing" />
+		<exclude name="Squiz.Commenting.VariableComment.MissingVar" />
+		<exclude name="Squiz.Commenting.FileComment.MissingPackageTag" />
+		<exclude name="Squiz.Commenting.FunctionComment.EmptyThrows" />
+		<exclude name="Squiz.Commenting.FileComment.WrongStyle" />
+		<exclude name="Squiz.Commenting.ClassComment.WrongStyle" />
+		<exclude name="Squiz.Commenting.ClassComment.SpacingAfter" />
+	</rule>
+
+	<rule ref="WordPress-Extra" />
+</ruleset>

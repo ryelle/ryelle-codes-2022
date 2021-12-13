@@ -1,0 +1,26 @@
+{
+  "name": "ryelle-2022",
+  "scripts": {
+    "build": "postcss src/*.css --dir ./build/ --no-map",
+    "start": "postcss src/*.css --dir ./build/ --watch",
+    "lint:css": "stylelint src"
+  },
+  "dependencies": {
+    "@wordpress/stylelint-config": "19.1.0",
+    "autoprefixer": "10.4.0",
+    "postcss": "8.4.5",
+    "postcss-cli": "9.1.0",
+    "postcss-import": "14.0.2",
+    "postcss-nesting": "10.1.0",
+    "postcss-short": "5.0.0",
+    "stylelint": "13.13.1"
+  },
+  "browserslist": "> 1% and not ie <= 11",
+  "stylelint": {
+    "extends": "@wordpress/stylelint-config",
+    "rules": {
+      "no-descending-specificity": null,
+      "selector-class-pattern": null
+    }
+  }
+}
