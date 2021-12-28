@@ -3,9 +3,10 @@
   "settings": {
     "appearanceTools": true,
     "border": {
-      "customColor": true,
-      "customStyle": true,
-      "customWidth": true
+      "color": true,
+      "radius": false,
+      "style": true,
+      "width": true
     },
     "color": {
       "palette": [
