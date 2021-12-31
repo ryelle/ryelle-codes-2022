@@ -1,8 +1,7 @@
 /* stylelint-disable */
 @font-face {
 	font-family: "ETC Trispace";
-	src: url(../fonts/etc-trispace.ttf) format("truetype"),
-	     url(../fonts/etc-trispace.woff2) format("woff2");
+	src: url(../fonts/etc-trispace.woff2) format("woff2");
 	font-weight: 100 900;
 	font-stretch: 50% 200%;
 	font-display: swap;
@@ -10,8 +9,7 @@
 
 @font-face {
 	font-family: "IBM Plex Sans Var";
-	src: url(../fonts/IBMPlexSansVar-Roman.ttf) format("truetype"),
-	     url(../fonts/IBMPlexSansVar-Roman.woff2) format("woff2");
+	src: url(../fonts/IBMPlexSansVar-Roman.woff2) format("woff2");
 	font-weight: 100 900;
 	font-stretch: 50% 200%;
 	font-display: swap;
@@ -19,8 +17,7 @@
 
 @font-face {
 	font-family: "IBM Plex Sans Var";
-	src: url(../fonts/IBMPlexSansVar-Italic.ttf) format("truetype"),
-	     url(../fonts/IBMPlexSansVar-Italic.woff2) format("woff2");
+	src: url(../fonts/IBMPlexSansVar-Italic.woff2) format("woff2");
 	font-style: italic;
 	font-weight: 100 900;
 	font-stretch: 50% 200%;
@@ -29,8 +26,7 @@
 
 @font-face {
 	font-family: "Fira Code";
-	src: url(../fonts/FiraCode-VF.ttf) format("truetype"),
-	     url(../fonts/FiraCode-VF.woff2) format("woff2");
+	src: url(../fonts/FiraCode-VF.woff2) format("woff2");
 	font-style: normal;
 	font-weight: 300 700;
 	font-display: swap;

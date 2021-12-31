@@ -92,3 +92,25 @@ function ryelle_2022_render_no_comments( $block_content ) {
 	return $block_content;
 }
 add_action( 'render_block_core/comment-template', 'ryelle_2022_render_no_comments' );
+
+/**
+ * Preload the web fonts to improve performance.
+ *
+ * ETC Trispace & IBM Plex Sans (normal and italics) are used on every page.
+ * Does not preload `Fira Code`, since that is only used for code blocks.
+ */
+function ryelle_2022_preload_assets() {
+	$font_urls = array(
+		get_theme_file_uri( 'fonts/etc-trispace.woff2' ),
+		get_theme_file_uri( 'fonts/IBMPlexSansVar-Roman.woff2' ),
+		get_theme_file_uri( 'fonts/IBMPlexSansVar-Italic.woff2' ),
+	);
+
+	foreach ( $font_urls as $url ) {
+		$ext = pathinfo( $url, PATHINFO_EXTENSION );
+		?>
+		<link rel="preload" href="<?php echo esc_url( $url ); ?>" as="font" type="font/woff2" crossorigin>
+		<?php
+	}
+}
+add_action( 'wp_head', 'ryelle_2022_preload_assets' );
