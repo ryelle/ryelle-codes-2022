@@ -91,6 +91,19 @@ body:where(.blog, .archive) {
 	& .wp-block-post .wp-block-post-date {
 		margin-top: calc(var(--wp--custom--spacing--horizontal) / 2);
 	}
+
+	& .site-footer aside {
+		padding-right: var(--wp--custom--spacing--horizontal);
+		padding-left: calc(var(--wp--custom--spacing--horizontal) / 4 + var(--wp--custom--spacing--horizontal) + var(--wp--custom--border--vertical));
+	}
+}
+
+body:not(.blog, .archive) {
+
+	& main,
+	& .site-footer {
+		padding: * calc(var(--wp--custom--spacing--horizontal) / 2);
+	}
 }
 
 .site-header {
@@ -153,19 +166,19 @@ body:where(.blog, .archive) {
 	}
 }
 
-.site-footer {
+.site-footer .wp-block-group ul {
+	margin-top: calc(var(--wp--custom--spacing--vertical) / 2);
+}
 
-	& aside {
+@media (min-width: 600px) {
+
+	.site-footer aside {
 		display: grid;
 		grid-template-columns: 3fr 2fr 2fr;
 		gap: var(--wp--custom--spacing--horizontal);
 	}
 
-	& .wp-block-group {
+	.site-footer .wp-block-group {
 		margin-top: 0;
-
-		& ul {
-			margin-top: calc(var(--wp--custom--spacing--vertical) / 2);
-		}
 	}
 }
