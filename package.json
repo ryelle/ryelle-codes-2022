@@ -7,7 +7,7 @@
   },
   "dependencies": {
     "@wordpress/stylelint-config": "19.1.0",
-    "autoprefixer": "10.4.1",
+    "autoprefixer": "10.4.2",
     "postcss": "8.4.5",
     "postcss-cli": "9.1.0",
     "postcss-import": "14.0.2",
