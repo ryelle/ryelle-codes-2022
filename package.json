@@ -9,7 +9,7 @@
     "@wordpress/stylelint-config": "20.0.2",
     "autoprefixer": "10.4.7",
     "postcss": "8.4.14",
-    "postcss-cli": "9.1.0",
+    "postcss-cli": "10.0.0",
     "postcss-import": "14.1.0",
     "postcss-nesting": "10.1.10",
     "postcss-short": "5.0.0",
