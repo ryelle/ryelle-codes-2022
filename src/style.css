@@ -50,6 +50,7 @@ pre,
 code {
 	font-feature-settings: "calt";
 	font-variant-ligatures: contextual;
+	font-size: 0.9em;
 }
 
 a:link,
@@ -108,6 +109,7 @@ body:not(.blog, .archive) {
 
 .site-header {
 	height: clamp(15rem, 50vh, 30rem);
+	padding: * calc(var(--wp--custom--spacing--horizontal) / 2);
 
 	& .wp-block-cover {
 		display: flex;
@@ -124,6 +126,10 @@ body:not(.blog, .archive) {
 		padding: var(--wp--custom--spacing--horizontal);
 		width: 100%;
 		max-width: var(--wp--custom--layout--content-size);
+	}
+
+	& .wp-block-cover__image-background {
+		object-position: bottom center;
 	}
 }
 
