@@ -11,7 +11,7 @@
     "postcss": "8.5.2",
     "postcss-cli": "11.0.0",
     "postcss-import": "16.1.0",
-    "postcss-nesting": "13.0.1",
+    "postcss-nesting": "10.2.0",
     "postcss-short": "5.0.0",
     "stylelint": "16.14.1"
   },
