@@ -6,7 +6,7 @@
     "lint:css": "stylelint src"
   },
   "dependencies": {
-    "@wordpress/stylelint-config": "23.9.0",
+    "@wordpress/stylelint-config": "23.18.0",
     "autoprefixer": "10.4.20",
     "postcss": "8.5.2",
     "postcss-cli": "11.0.0",
