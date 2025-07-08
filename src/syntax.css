@@ -1,0 +1,224 @@
+:root {
+	--wp--preset--color--rainbow-red: oklch(0.83 0.1 359);
+	--wp--preset--color--rainbow-orange: oklch(0.82 0.1 35);
+	--wp--preset--color--rainbow-yellow: oklch(0.85 0.1 68);
+	--wp--preset--color--rainbow-green: oklch(0.85 0.1 135);
+	--wp--preset--color--rainbow-blue: oklch(0.80 0.1 255);
+	--wp--preset--color--rainbow-purple: oklch(0.85 0.1 315);
+	--wp--preset--color--rainbow-grey: oklch(0.85 0.04 264);
+}
+
+/**
+ * Based on a11y-dark theme by ericwbailey, which was based on
+ * the okaidia theme: https://github.com/PrismJS/prism/blob/v2/src/themes/okaidia.css
+ */
+
+pre.wp-block-code code {
+	color: var(--wp--preset--color--sky);
+	padding-left: 0;
+	border: none;
+	overflow-x: initial;
+}
+
+code[class*='language-'],
+pre[class*='language-'] {
+	color: var(--wp--preset--color--sky);
+	background: none;
+	font-family: Hack, 'Fira Code', Consolas, Menlo, Monaco, 'Andale Mono',
+		'Lucida Console', 'Lucida Sans Typewriter', 'DejaVu Sans Mono',
+		'Bitstream Vera Sans Mono', 'Liberation Mono', 'Nimbus Mono L',
+		'Courier New', Courier, monospace;
+	text-align: left;
+	white-space: pre;
+	word-spacing: normal;
+	word-break: normal;
+	word-wrap: normal;
+	line-height: 1.5;
+
+	-moz-tab-size: 4;
+	-o-tab-size: 4;
+	tab-size: 4;
+
+	-webkit-hyphens: none;
+	-moz-hyphens: none;
+	-ms-hyphens: none;
+	hyphens: none;
+}
+
+/* Code blocks */
+pre.wp-block-code {
+	background: var(--wp--preset--color--navy);
+	overflow: auto;
+}
+
+:where(pre.wp-block-code) {
+	padding: 1em;
+	margin: 0.5em auto;
+	border-radius: 0.3em;
+}
+
+.token.comment,
+.token.prolog,
+.token.doctype,
+.token.cdata {
+	color: var(--wp--preset--color--rainbow-grey);
+}
+
+.token.punctuation {
+	color: var(--wp--preset--color--rainbow-grey);
+}
+
+.token.property,
+.token.tag,
+.token.constant,
+.token.symbol,
+.token.deleted {
+	color: var(--wp--preset--color--rainbow-blue);
+}
+
+.token.boolean,
+.token.number,
+.token.string {
+	color: var(--wp--preset--color--rainbow-yellow);
+}
+
+.token.selector,
+.token.attr-name,
+.token.char,
+.token.builtin,
+.token.inserted {
+	color: var(--wp--preset--color--rainbow-green);
+}
+
+.token.operator,
+.token.entity,
+.token.url,
+.language-css .token.string,
+.style .token.string,
+.token.variable {
+	color: var(--wp--preset--color--rainbow-red);
+}
+
+.token.atrule,
+.token.attr-value,
+.token.function {
+	color: var(--wp--preset--color--rainbow-orange);
+}
+
+.token.keyword {
+	color:var(--wp--preset--color--rainbow-purple);
+}
+
+.token.regex,
+.token.important {
+	color: var(--wp--preset--color--rainbow-grey);
+}
+
+.token.bold {
+	font-weight: 700;
+}
+
+.token.italic {
+	font-style: italic;
+}
+
+.token.entity {
+	cursor: help;
+}
+
+@media screen and ( -ms-high-contrast: active ) {
+
+	code[class*='language-'],
+	pre[class*='language-'] {
+		color: windowText;
+		background: window;
+	}
+
+	:not( pre ) > code[class*='language-'],
+	pre[class*='language-'] {
+		background: window;
+	}
+
+	.token.important {
+		background: highlight;
+		color: window;
+		font-weight: 400;
+	}
+
+	.token.atrule,
+	.token.attr-value,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.selector {
+		font-weight: 700;
+	}
+
+	.token.attr-value,
+	.token.comment,
+	.token.doctype,
+	.token.function,
+	.token.keyword,
+	.token.operator,
+	.token.property,
+	.token.string {
+		color: highlight;
+	}
+
+	.token.attr-value,
+	.token.url {
+		font-weight: 400;
+	}
+}
+
+pre.line-numbers {
+	position: relative;
+	padding-left: 3.8em;
+	counter-reset: linenumber;
+}
+
+pre.line-numbers > code {
+	position: relative;
+
+	/* Padding can be tweaked by themes, but if top padding is off
+	/* the line numbers don't align with the row. */
+	padding-top: 0 !important;
+}
+
+.line-numbers .line-numbers-rows {
+	position: absolute;
+	pointer-events: none;
+	top: 0;
+	font-size: 100%;
+	left: -3.8em;
+	width: 3em; /* works for line-numbers below 1000 lines */
+	letter-spacing: -1px;
+	border-right: 0;
+
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
+
+.line-numbers-rows > span {
+	pointer-events: none;
+	display: block;
+	counter-increment: linenumber;
+}
+
+.line-numbers-rows > span::before {
+	content: counter( linenumber );
+	color: var(--wp--preset--color--rainbow-grey);
+	display: block;
+	padding-right: 0.8em;
+	text-align: right;
+}
+
+.prism-titlename {
+	margin-inline: -1rem;
+	margin-block-end: 1rem;
+	padding: 0 1rem 0.75rem;
+	font-size: 0.9rem;
+	border-bottom: 2px solid #fff8;
+}

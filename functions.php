@@ -56,6 +56,13 @@ function ryelle_2022_assets() {
 }
 add_action( 'wp_enqueue_scripts', 'ryelle_2022_assets' );
 
+add_action(
+	'mkaz_prism_css_path',
+	function() {
+		return '/build/syntax.css';
+	}
+);
+
 /**
  * Enqueue the editor assets.
  */
@@ -114,3 +121,10 @@ function ryelle_2022_preload_assets() {
 	}
 }
 add_action( 'wp_head', 'ryelle_2022_preload_assets' );
+
+add_filter(
+	'syntax_highlighting_code_block_auto_detect_languages',
+	function() {
+		return [ 'css', 'scss', 'php', 'html', 'javascript' ];
+	}
+);
