@@ -88,9 +88,20 @@
 }
 
 .wp-block-gallery {
+
 	&.has-nested-images figure.wp-block-image figcaption {
-		background-color: #0009;
-		padding: var(--wp--style--unstable-gallery-gap, 1em);
+		background-color: rgb(from var(--wp--preset--color--navy) r g b / 0.5);
+		padding: calc(var(--wp--custom--spacing--horizontal) * .5);
 		text-align: left;
+		backdrop-filter: blur(16px);
+		text-wrap: pretty;
+
+		& a {
+			background-image: none;
+		}
+	}
+
+	&.has-nested-images figure.wp-block-image:has(figcaption)::before {
+		display: none;
 	}
 }

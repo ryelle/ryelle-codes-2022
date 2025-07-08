@@ -1,11 +1,27 @@
-<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
-<!-- wp:group {"tagName":"main","layout":{"inherit":true}} -->
-<main class="wp-block-group">
-	<!-- wp:group {"style":{"border":{"width":"0 0 0 2px","style":"solid"}},"borderColor":"gold"} -->
-	<div class="wp-block-group has-border-color has-gold-border-color" style="border-style:solid;border-width:0 0 0 2px">
-		<!-- wp:template-part {"slug":"content"} /-->
+<!-- wp:group {"layout":{"type":"flex","flexWrap":"nowrap","verticalAlignment":"top"},"style":{"spacing":{"blockGap":"0"}},"className":"site-container"} -->
+<div class="wp-block-group site-container">
+	<!-- wp:group {"style":{"layout":{"selfStretch":"fixed","flexSize":"400px"},"position":{"type":"sticky","top":"0px"}},"layout":{"type":"constrained"}} -->
+	<div class="wp-block-group">
+		<!-- wp:template-part {"slug":"header","tagName":"header","className":"site-header"} /-->
 	</div>
 	<!-- /wp:group -->
-</main>
+
+	<!-- wp:group {"tagName":"main","style":{"layout":{"selfStretch":"fill","flexSize":null},"spacing":{"blockGap":"8px"}},"layout":{"inherit":true,"type":"constrained","justifyContent":"center"}} -->
+	<main class="wp-block-group">
+		<!-- wp:group {"align":"full","style":{"border":{"top":{"width":"0px","style":"none"},"right":{"width":"0px","style":"none"},"bottom":{"width":"2px","style":"solid","color":"var:preset|color|sky"},"left":{"width":"0px","style":"none"}}},"layout":{"type":"constrained"}} -->
+		<div class="wp-block-group alignfull" style="border-top-style:none;border-top-width:0px;border-right-style:none;border-right-width:0px;border-bottom-color:var(--wp--preset--color--sky);border-bottom-style:solid;border-bottom-width:2px;border-left-style:none;border-left-width:0px">
+			<!-- wp:template-part {"slug":"short-bio","className":"short-bio"} /-->
+		</div>
+		<!-- /wp:group -->
+
+		<!-- wp:group {"style":{"border":{"width":"0 0 0 2px","style":"solid"}},"borderColor":"gold"} -->
+		<div class="wp-block-group has-border-color has-gold-border-color" style="border-style:solid;border-width:0 0 0 2px">
+			<!-- wp:template-part {"slug":"content"} /-->
+		</div>
+		<!-- /wp:group -->
+	</main>
+	<!-- /wp:group -->
+</div>
 <!-- /wp:group -->
+
 <!-- wp:template-part {"slug":"footer","tagName":"footer","className":"site-footer"} /-->
