@@ -1,0 +1,43 @@
+name: Build the CSS and push to build branch.
+
+on:
+    push:
+        branches:
+            - main
+    workflow_dispatch:
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout repository
+              uses: actions/checkout@v4
+              with:
+                persist-credentials: false
+                fetch-depth: 0 
+
+            - name: Install NodeJS
+              uses: actions/setup-node@v4
+              with:
+                  node-version-file: '.nvmrc'
+                  cache: npm
+
+            - name: Install JS dependencies
+              run: npm ci
+
+            - name: Build
+              run: |
+                  npm run lint:css
+                  npm run build
+
+            - name: Add all the theme files
+              run: |
+                git add build --force
+
+            - name: Commit and push
+              uses: actions-js/push@v1.5
+              with:
+                  github_token: ${{ secrets.GITHUB_TOKEN }}
+                  branch: build
+                  force: true
+                  message: 'Build CSS: ${{ github.sha }}'
