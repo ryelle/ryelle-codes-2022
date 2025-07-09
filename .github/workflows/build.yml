@@ -32,6 +32,7 @@ jobs:
 
             - name: Add all the theme files
               run: |
+                rm -rf node_modules
                 git add build --force
 
             - name: Commit and push
