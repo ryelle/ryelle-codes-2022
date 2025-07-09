@@ -1,0 +1,100 @@
+.wp-block-separator {
+	opacity: 1;
+	color: var(--wp--preset--color--gold);
+}
+
+.wp-block-separator:not(.is-style-wide):not(.is-style-dots) {
+		width: calc(var(--wp--custom--spacing--horizontal) * 5);
+	}
+
+.wp-block-separator.has-background:not(.is-style-dots) {
+		border-bottom: none;
+		height: var(--wp--custom--border--horizontal);
+	}
+
+.wp-block-separator.has-background:not(.is-style-wide):not(.is-style-dots) {
+		height: var(--wp--custom--border--horizontal);
+	}
+
+.wp-block-separator.is-style-wide {
+		border-bottom-width: var(--wp--custom--border--horizontal);
+	}
+
+.wp-block-separator.is-style-half {
+		border: none;
+	}
+
+.wp-block-separator.is-style-half::after {
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+.wp-block-spacer {
+	margin-top: 0 !important;
+}
+
+.wp-block-spacer + * {
+	margin-top: 0 !important;
+}
+
+.wp-block-code {
+	border: none;
+}
+
+.wp-block-query-pagination {
+	margin-top: 0 !important;
+	padding: var(--wp--custom--spacing--horizontal) !important;
+	padding-left: calc(var(--wp--custom--spacing--horizontal) / 4 + var(--wp--custom--spacing--horizontal)) !important;
+}
+
+.wp-block-query-pagination > .wp-block-query-pagination-next,
+.wp-block-query-pagination > .wp-block-query-pagination-numbers,
+.wp-block-query-pagination > .wp-block-query-pagination-previous {
+	margin: 0;
+}
+
+.wp-block-button__link:link,
+.wp-block-button__link:visited,
+.wp-block-button__link:hover,
+.wp-block-button__link:active,
+.wp-block-button__link:focus {
+	text-decoration: none;
+}
+
+.wp-block-button__link:hover,
+.wp-block-button__link:active,
+.wp-block-button__link:focus {
+	background-color: var(--wp--preset--color--navy);
+}
+
+:is(.wp-block-quote,.wp-block-media-text__content,.wp-block-column) :first-child {
+		margin-top: 0;
+	}
+
+:is(.wp-block-quote,.wp-block-media-text__content,.wp-block-column) :last-child {
+		margin-bottom: 0;
+	}
+
+.wp-block-media-text.has-media-on-the-right .wp-block-media-text__content {
+	padding-left: 0;
+}
+
+.wp-block-media-text.has-media-on-the-left .wp-block-media-text__content {
+	padding-right: 0;
+}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image figcaption {
+		background-color: rgb(from var(--wp--preset--color--navy) r g b / 0.5);
+		padding: calc(var(--wp--custom--spacing--horizontal) * .5);
+		text-align: left;
+		backdrop-filter: blur(16px);
+		text-wrap: pretty;
+	}
+
+:is(.wp-block-gallery.has-nested-images figure.wp-block-image figcaption) a {
+			background-image: none;
+		}
+
+.wp-block-gallery.has-nested-images figure.wp-block-image:has(figcaption)::before {
+		display: none;
+	}
