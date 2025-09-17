@@ -4,5 +4,8 @@ module.exports = {
     require("postcss-nesting"),
     require("postcss-short"),
     require("autoprefixer"),
+    require("cssnano")({
+      preset: "default",
+    }),
   ],
 };
