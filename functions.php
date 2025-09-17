@@ -10,6 +10,7 @@
 // Actions & filters.
 add_action( 'after_setup_theme', 'ryelle_2022_setup' );
 add_action( 'wp_enqueue_scripts', 'ryelle_2022_assets' );
+add_filter( 'styles_inline_size_limit', 'ryelle_2022_inline_size_limit' );
 add_action( 'admin_init', 'ryelle_2022_editor_styles' );
 add_action( 'wp_enqueue_scripts', 'ryelle_2022_dequeue_dashicons' );
 add_action( 'render_block_core/comment-template', 'ryelle_2022_render_no_comments' );
@@ -55,13 +56,25 @@ function ryelle_2022_setup() {
  * Enqueue the assets.
  */
 function ryelle_2022_assets() {
-	$version = filemtime( __DIR__ . '/build/blocks.css' );
+	$file_path = get_theme_file_path( 'build/blocks.css' );
+	$version = filemtime( $file_path );
 	wp_register_style( 'ryelle-2022-blocks', get_template_directory_uri() . '/build/blocks.css', [], $version );
+	wp_style_add_data( 'ryelle-2022-blocks', 'path', $file_path );
+	wp_enqueue_style( 'ryelle-2022-blocks' );
 
-	$version = filemtime( __DIR__ . '/build/style.css' );
+	$file_path = get_theme_file_path( 'build/style.css' );
+	$version = filemtime( $file_path );
 	wp_register_style( 'ryelle-2022-style', get_template_directory_uri() . '/build/style.css', [ 'ryelle-2022-blocks' ], $version );
+	wp_style_add_data( 'ryelle-2022-style', 'path', $file_path );
 
 	wp_enqueue_style( 'ryelle-2022-style' );
+}
+
+/**
+ * Update the inline file size limit.
+ */
+function ryelle_2022_inline_size_limit(): int {
+	return 30000;
 }
 
 /**
